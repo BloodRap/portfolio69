@@ -22,11 +22,11 @@ $(document).ready(function () {
         menu: '#menu',
 
         afterLoad: function (anchorLink, index) {
-            $header_top.css('background', 'rgba(0, 47, 77, .3)');
+            $header_top.css('background', 'rgba(0, 47, 77, .4)');
             $nav.css('background', 'rgba(0, 47, 77, .25)');
-//            if (index == 5) {
-//                $('#fp-nav').hide();
-//            }
+            //            if (index == 5) {
+            //                $('#fp-nav').hide();
+            //            }
         },
 
         onLeave: function (index, nextIndex, direction) {
@@ -35,24 +35,27 @@ $(document).ready(function () {
             }
         },
 
-        afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
-            if (anchorLink == 'fifthSection' && slideIndex == 1) {
-                $.fn.fullpage.setAllowScrolling(false, 'up');
+       /* afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
+            if (anchorLink == 'fifthSection' || anchorLink == 'firstSection' || anchorLink == 'secondSection' || anchorLink == 'thirdSection' || anchorLink == 'forthSection') {
+                //$.fn.fullpage.setAllowScrolling(false, 'up');
                 $header_top.css('background', 'transparent');
                 $nav.css('background', 'transparent');
-                $(this).css('background', '#374140');
-                $(this).find('h2').css('color', 'white');
-                $(this).find('h3').css('color', 'white');
+                //$(this).css('background', '#374140');
+                //$(this).find('h2').css('color', 'white');
+                //$(this).find('h3').css('color', 'white');
                 $(this).find('p').css({
-                    'color': '#DC3522',
-                    'opacity': 1,
-                    'transform': 'translateY(0)'
+                //    'color': '#DC3522',
+                //    'opacity': 1,
+                //    'transform': 'translateY(0)'
                 });
+                //var bredd = $(window).width()/2;
+                //bredd = bredd + bredd*2*slideIndex;
+                //$("div.scroll-icon").css('left', bredd);
             }
-        },
+        },*/
 
         onSlideLeave: function (anchorLink, index, slideIndex, direction) {
-            if (anchorLink == 'fifthSection' && slideIndex == 1) {
+            if (anchorLink == 'fifthSection' && slideIndex == 0) {
                 $.fn.fullpage.setAllowScrolling(true, 'up');
                 $header_top.css('background', 'rgba(0, 47, 77, .3)');
                 $nav.css('background', 'rgba(0, 47, 77, .25)');
